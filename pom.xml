@@ -14,6 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<hadoop_version>0.23.1</hadoop_version>
 		<junit_version>4.8.1</junit_version>
+		<maven-compiler-plugin.version>3.0</maven-compiler-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -37,10 +38,13 @@
 		<dependency>
 			<groupId>org.apache.mrunit</groupId>
 			<artifactId>mrunit</artifactId>
-			 <version>1.1.0</version>
-			<!--  <version>0.9.0-incubating</version> -->			
-			<classifier>hadoop1</classifier>
+			<version>1.1.0</version>
+			<classifier>hadoop2</classifier>
 		</dependency>
+		<!-- <dependency> <groupId>org.apache.mrunit</groupId> <artifactId>mrunit</artifactId> 
+			<version>0.9.0-incubating</version> <classifier>hadoop2</classifier> </dependency> 
+			<dependency> <groupId>org.apache.mrunit</groupId> <artifactId>mrunit</artifactId> 
+			<version>1.1.0</version> <classifier>hadoop1</classifier> </dependency> -->
 
 
 		<dependency>
@@ -84,6 +88,10 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+			</plugin>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
